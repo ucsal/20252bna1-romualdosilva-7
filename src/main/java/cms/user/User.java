@@ -1,35 +1,31 @@
+package cms.user;
 public abstract class User {
-  private  int id, senha;
-    private String email, nome;
+    private final int id;
+    private final String nome;
+    private final String email;
+    private final String password;
 
-    public User(int id, int senha, String email, String nome){
-        this.senha = senha;
+    public User(int id, String nome, String email, String password) {
         this.id = id;
-        this.email = email;
         this.nome = nome;
+        this.email = email;
+        this.password = password;
     }
-    public String getome(){
-        return nome;
-    }
-    
-    public String getemail(){
-        return email;
-    }
-    
-    public int getid(){
+
+    public int getId() {
         return id;
     }
 
-    public int getsenha(){
-        return senha;
-
-    }
-    public class checkPassword(int senha){
-boolean checkPassword = true;
-if(checkPassword == true){
-    System.out.println("Sua senha foi checada e está correta.");
-}
+    public String getNome() {
+        return nome;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public boolean checkPassword(String p) {
+        return password.equals(p);
+    }
 
 }
